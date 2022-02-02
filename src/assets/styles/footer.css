@@ -1,0 +1,18 @@
+.contents {
+  text-align: center;
+  width: 100%;
+  padding-top: 13px;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+a:hover {
+  opacity: 0.6;
+  color: #575566;
+}
+.a {
+  color: #000;
+}
