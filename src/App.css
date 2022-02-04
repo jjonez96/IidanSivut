@@ -1,0 +1,18 @@
+.App {
+  text-align: center;
+}
+html {
+  background-color: #ede9e5;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+hr {
+  border: none;
+  height: 0.5px;
+  background-color: #d9d6f1;
+  box-shadow: 0 0 10px #d9d6f1;
+  width: 50%;
+}

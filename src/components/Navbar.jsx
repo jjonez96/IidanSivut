@@ -25,26 +25,28 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="fixed" style={{ background: "#2E3B55" }}>
-      <Container maxWidth="xl">
+    <AppBar
+      position="fixed"
+      style={{
+        background: "rgba(255, 255, 255, 0.15)",
+        backdropFilter: "blur(5px)",
+      }}
+    >
+      <Container maxWidth="l">
         <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
+          <Typography variant="h4" component="div"></Typography>
+          <Box
+            sx={{
+              display: { alignItems: "flex-end", xs: "flex", md: "none" },
+            }}
           >
-            <span role="img">💅</span>
-          </Typography>
-
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
+              style={{
+                color: "black",
+                background: "rgba(255, 255, 255, 0.15)",
+                backdropFilter: "blur(5px)",
+              }}
             >
               <MenuIcon />
             </IconButton>
@@ -68,33 +70,42 @@ const Navbar = () => {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">
-                    <Link
-                      style={{ textDecoration: "none", color: "white" }}
-                      to={`/${page}`}
-                    >
-                      {page}
-                    </Link>
-                  </Typography>
+                  <Link
+                    style={{
+                      fontSize: "1.3em",
+                      textDecoration: "none",
+                      color: "black",
+                      fontFamily: "Roboto",
+                    }}
+                    to={`/${page}`}
+                  >
+                    {page}
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
-          ></Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box
+            sx={{
+              display: { xs: "none", md: "flex" },
+            }}
+          >
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{
+                  my: 1,
+                }}
               >
                 <Link
-                  style={{ textDecoration: "none", color: "white" }}
+                  style={{
+                    textDecoration: "none",
+                    fontSize: "1.3em",
+                    fontFamily: "Roboto",
+                    textShadow: "1px 1px #000",
+                    color: "#d9d6f1",
+                  }}
                   to={`/${page}`}
                 >
                   {page}
