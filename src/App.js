@@ -10,7 +10,7 @@ const App = () => {
     <div className="App">
       <Navbar />
       <Routes>
-        <Route exact path="/etusivu" element={<Etusivu />} />
+        <Route path="/Etusivu" element={<Etusivu />} />
         <Route path="/Kynnet" element={<Kynnet />} />
       </Routes>
     </div>

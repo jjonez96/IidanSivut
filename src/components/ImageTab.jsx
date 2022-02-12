@@ -83,7 +83,7 @@ const images = [
   },
 ];
 
-export default function ProductSmokingHero() {
+export default function ImageTab() {
   return (
     <div
       className="imageBackdrop"

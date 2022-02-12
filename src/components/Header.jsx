@@ -1,12 +1,12 @@
 import * as React from "react";
-import ProductHeroLayout from "./ProductHeroLayout";
+import HeaderLayout from "./HeaderLayout";
 import Typography from "@mui/material/Typography";
 
 const backgroundImage = "./pictures/oona.jpg";
 
-export default function ProductHero() {
+export default function Header() {
   return (
-    <ProductHeroLayout
+    <HeaderLayout
       sxBackground={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundPosition: "center",
@@ -17,6 +17,7 @@ export default function ProductHero() {
         src={backgroundImage}
         alt="increase priority"
       />
+
       <Typography
         style={{
           color: "#d9d6f1",
@@ -32,7 +33,6 @@ export default function ProductHero() {
       >
         Lillaiita
       </Typography>
-
       <Typography
         style={{
           color: "#d9d6f1",
@@ -48,7 +48,6 @@ export default function ProductHero() {
       >
         Kynsiteknikko
       </Typography>
-      <hr />
-    </ProductHeroLayout>
+    </HeaderLayout>
   );
 }

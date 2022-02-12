@@ -23,7 +23,7 @@ const image = {
   my: 4,
 };
 
-function ProductHowItWorks() {
+function InfoTab() {
   return (
     <Box
       style={{ backgroundColor: "#d9d6f1" }}
@@ -106,4 +106,4 @@ function ProductHowItWorks() {
   );
 }
 
-export default ProductHowItWorks;
+export default InfoTab;

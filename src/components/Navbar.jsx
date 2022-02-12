@@ -10,6 +10,8 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
+import { Drawer } from "@mui/material";
+import Divider from "@mui/material/Divider";
 
 const pages = ["Etusivu", "Kynnet"];
 
@@ -23,13 +25,13 @@ const Navbar = () => {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-
+  const drawerWidth = 240;
   return (
     <AppBar
       position="fixed"
       style={{
-        background: "rgba(255, 255, 255, 0.15)",
-        backdropFilter: "blur(5px)",
+        background: "rgba(255, 255, 255, 0.10)",
+        backdropFilter: "blur(7px)",
       }}
     >
       <Container maxWidth="l">
@@ -37,19 +39,18 @@ const Navbar = () => {
           <Typography variant="h4" component="div"></Typography>
           <Box
             sx={{
-              display: { alignItems: "flex-end", xs: "flex", md: "none" },
+              display: { alignItems: "flex-start", xs: "flex", md: "none" },
             }}
           >
             <IconButton
               onClick={handleOpenNavMenu}
               style={{
-                color: "black",
-                background: "rgba(255, 255, 255, 0.15)",
-                backdropFilter: "blur(5px)",
+                color: "white",
               }}
             >
               <MenuIcon />
             </IconButton>
+
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -69,19 +70,33 @@ const Navbar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Link
-                    style={{
-                      fontSize: "1.3em",
-                      textDecoration: "none",
-                      color: "black",
-                      fontFamily: "Roboto",
-                    }}
-                    to={`/${page}`}
-                  >
-                    {page}
-                  </Link>
-                </MenuItem>
+                <Drawer
+                  sx={{
+                    width: drawerWidth,
+                    flexShrink: 0,
+                    "& .MuiDrawer-paper": {
+                      width: drawerWidth,
+                      boxSizing: "border-box",
+                    },
+                  }}
+                  variant="permanent"
+                  anchor="right"
+                >
+                  <MenuItem key={page}>
+                    <Link
+                      style={{
+                        fontSize: "1.3em",
+                        textDecoration: "none",
+                        color: "black",
+                        fontFamily: "Roboto",
+                      }}
+                      to={`/${page}`}
+                    >
+                      {page}
+                    </Link>
+                  </MenuItem>
+                  <Divider />
+                </Drawer>
               ))}
             </Menu>
           </Box>
@@ -101,7 +116,7 @@ const Navbar = () => {
                 <Link
                   style={{
                     textDecoration: "none",
-                    fontSize: "1.3em",
+                    fontSize: "1.4em",
                     fontFamily: "Roboto",
                     textShadow: "1px 1px #000",
                     color: "#d9d6f1",

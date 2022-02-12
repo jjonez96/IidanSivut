@@ -4,7 +4,7 @@ import { styled } from "@mui/material/styles";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 
-const ProductHeroLayoutRoot = styled("section")(({ theme }) => ({
+const HeaderLayoutRoot = styled("section")(({ theme }) => ({
   color: theme.palette.common.white,
   position: "relative",
   display: "flex",
@@ -27,11 +27,11 @@ const Background = styled(Box)({
   zIndex: -2,
 });
 
-function ProductHeroLayout(props) {
+function HeaderLayout(props) {
   const { sxBackground, children } = props;
 
   return (
-    <ProductHeroLayoutRoot>
+    <HeaderLayoutRoot>
       <Container
         sx={{
           mt: 3,
@@ -44,7 +44,6 @@ function ProductHeroLayout(props) {
         <img height="80" alt="" />
         {children}
         <Box
-          Lillaiita
           sx={{
             position: "absolute",
             left: 0,
@@ -58,11 +57,11 @@ function ProductHeroLayout(props) {
         />
         <Background sx={sxBackground} />
       </Container>
-    </ProductHeroLayoutRoot>
+    </HeaderLayoutRoot>
   );
 }
 
-ProductHeroLayout.propTypes = {
+HeaderLayout.propTypes = {
   children: PropTypes.node,
   sxBackground: PropTypes.oneOfType([
     PropTypes.arrayOf(
@@ -73,4 +72,4 @@ ProductHeroLayout.propTypes = {
   ]),
 };
 
-export default ProductHeroLayout;
+export default HeaderLayout;

@@ -1,15 +1,15 @@
 import React from "react";
 import AppFooter from "./AppFooter";
-import ProductHero from "./ProductHero";
-import ProductHowItWorks from "./ProductHowItWorks";
-import ProductSmokingHero from "./ProductSmokingHero";
+import Header from "./Header";
+import InfoTab from "./InfoTab";
+import ImageTab from "./ImageTab";
 
 function Etusivu() {
   return (
     <div className="center">
-      <ProductHero />
-      <ProductHowItWorks />
-      <ProductSmokingHero />
+      <Header />
+      <InfoTab />
+      <ImageTab />
       <AppFooter />
     </div>
   );
